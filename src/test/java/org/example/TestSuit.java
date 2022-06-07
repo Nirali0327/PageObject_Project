@@ -13,9 +13,12 @@ public class TestSuit extends BaseTest {
     AddToCartPage addToCartPage = new AddToCartPage();
     EmailToFriendPage emailToFriendPage = new EmailToFriendPage();
     RegisterResultPage registerResultPage = new RegisterResultPage();
-   VerifyCommunityPollPage verifycommunitypollpage = new VerifyCommunityPollPage();
-   VerifyEmailMessagePage verifyEmailMessagePage = new VerifyEmailMessagePage();
-   SelectProductPage selectProductPage = new SelectProductPage();
+    VerifyCommunityPollPage verifycommunitypollpage = new VerifyCommunityPollPage();
+    VerifyEmailMessagePage verifyEmailMessagePage = new VerifyEmailMessagePage();
+    SelectProductPage selectProductPage = new SelectProductPage();
+
+
+
 
     @Test(priority = 1)
     public void UserIsAbleToRegister() {
@@ -30,8 +33,9 @@ public class TestSuit extends BaseTest {
         // verify the correct currency for a product
         currencyPage.CheckTheCurrencyForProduct();
     }
+
     @Test(priority = 5)
-    public void UserIsAbleToAddProductToCart(){
+    public void UserIsAbleToAddProductToCart() {
         homePage.userClicksOnComputer();
         desktopPage.clicksOnDeskTop();
         addToCartPage.clickOnAddToCart();
@@ -39,6 +43,7 @@ public class TestSuit extends BaseTest {
         verifyProductAddedToCart.CorrectProduct();
         verifyProductAddedToCart.correctPageTitle();
     }
+
     @Test(priority = 4)
     public void ReferAProductToFriend() {
         homePage.userClicksOnRegistration();
@@ -50,8 +55,9 @@ public class TestSuit extends BaseTest {
         verifyEmailMessagePage.emailSent();
 
     }
-  @Test(priority = 3)
-  public void HomePageCommunityPollVote(){
+
+    @Test(priority = 3)
+    public void HomePageCommunityPollVote() {
         homePage.UserClicksOnCommunityPoll();
         verifycommunitypollpage.VerifyVoteErrorMsg();
         homePage.userClicksOnRegistration();
@@ -60,7 +66,38 @@ public class TestSuit extends BaseTest {
         homePage.UserClicksOnCommunityPoll();
         verifycommunitypollpage.VerifyVoteAfterRegister();
 
-        }
-
+    }
+    //user can view all the product is listed for  camera/photo
+    @Test(priority = 6)
+    public void getListOfProduct() {
+        homePage.getProductTitlesForCamera();
     }
 
+    @Test(priority = 7)
+    public void userClicksOnAlert() {
+        homePage.votePopUp();
+    }
+// verify user can  sortBy Name : z to A for a product correctly
+    @Test(priority = 8)
+    public void userSortBYZtoA() {
+        homePage.userClicksOnComputer();
+        desktopPage.clicksOnDeskTop();
+        desktopPage.SortByZToA();
+    }
+    // user can navigate from  nopcommerce page to facebook successfully
+    @Test(priority = 9)
+    public void userNavigateToFacebookPage()
+    {
+        homePage.clickFaceBook();
+    }
+    // user can search for any product type from search box.
+    @Test(priority = 10)
+    public  void verifyUserCanSearchAnyProductType(){
+      homePage.searchProduct("Nike");
+    }
+    // user can add the comment successfully
+    @Test(priority = 11)
+    public void commentAdded(){
+        homePage.nopCommerceNewRelease();
+    }
+}

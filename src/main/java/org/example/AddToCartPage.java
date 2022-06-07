@@ -12,6 +12,7 @@ public class AddToCartPage extends Utils {
             e.printStackTrace();
         }
         clickElement(By.xpath("//div[@data-productid='1']//child::button[contains(text(),\"Add to cart\")]"));
+       // clickElement(By.xpath("//button[normalize-space()='Add to cart']"));
 
 
     }
