@@ -27,9 +27,9 @@ public class BuildYourComputerPage extends Utils {
         clickElement(_software1);
         clickElement(_software2);
         clickElement(_software3);
-        // click on  Add to cart button
-        driverElementToBeClickable(3,By.xpath("//div[@class=\"add-to-cart\"]//child::button"));
-        // click on shopping cart button
+       // click on  Add to cart button
+       driverElementToBeClickable(3,By.xpath("//div[@class=\"add-to-cart\"]//child::button"));
+       // click on shopping cart button
         driverElementToBeClickable(5,By.xpath("//span[@class=\"cart-label\"]"));
     }
 }

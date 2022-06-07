@@ -32,6 +32,10 @@ public class Utils extends BasePage {
     public static String getTextElement(By by) {
         return driver.findElement(by).getText();
     }
+    // To clear the text
+    public void clearText(By by){
+        driver.findElement(by).clear();
+    }
 
     //To use a Timestamp
     public static String randomDate() {
