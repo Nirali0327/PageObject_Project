@@ -21,11 +21,15 @@ public class DesktopPage extends Utils {
     public void SortByZToA() {
         //select sort by Z to A
         selectDropdownValue(_sortByZtoA, "6");
+        // List of WebElements for product title  to get text
         List<WebElement> productTitles = driver.findElements(By.xpath("//h2[@class=\"product-title\"]"));
+
+        // List of webelement for product title to get text  in decending order
         List<String> descendingProductTitles = new ArrayList<String>();
         for (WebElement e : productTitles) {
             descendingProductTitles.add(e.getText().substring(0, 1));
         }
+        //  //sorting after list for descending order
         Collections.sort(descendingProductTitles, Collections.reverseOrder());
         System.out.println(descendingProductTitles);
 
@@ -33,6 +37,7 @@ public class DesktopPage extends Utils {
         for (WebElement e : productTitles) {
             actualProductTitles.add(e.getText().substring(0, 1));
         }
+        //verification for before list and after list
         System.out.println(actualProductTitles);
         Assert.assertTrue(actualProductTitles.equals(descendingProductTitles));
 

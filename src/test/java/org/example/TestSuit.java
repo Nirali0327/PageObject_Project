@@ -16,10 +16,6 @@ public class TestSuit extends BaseTest {
     VerifyCommunityPollPage verifycommunitypollpage = new VerifyCommunityPollPage();
     VerifyEmailMessagePage verifyEmailMessagePage = new VerifyEmailMessagePage();
     SelectProductPage selectProductPage = new SelectProductPage();
-
-
-
-
     @Test(priority = 1)
     public void UserIsAbleToRegister() {
         //verify user can register successfully

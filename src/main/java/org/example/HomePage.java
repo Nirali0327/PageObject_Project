@@ -23,9 +23,8 @@ public class HomePage extends Utils {
     private By _clickDetail = By.xpath("//div[3]/a[@href=\"/nopcommerce-new-release\"]");
     private By _clickComment = By.xpath("//button[@name=\"add-comment\"]");
     private By _findElement = By.xpath("//div[@class=\"result\"]");
+
     private By _findElement1 = By.xpath("//div[@class=\"comment-title\"]");
-
-
     public void userClicksOnRegistration() {
         // click on register button
         clickElement(_clickRegister);
@@ -72,13 +71,15 @@ public class HomePage extends Utils {
     public void clickFaceBook() {
         // click on facebook tab
         clickElement(_clickFaceBook);
+        // window handler command to direct that current window is main window
         String mainWindow = driver.getWindowHandle();
-        //handle new window
+        //handle multiple  window
         Set<String> s1 = driver.getWindowHandles();
         int count = s1.size();
         System.out.println("Total window" + count);
         for (String childWindow : s1) {
             if (!mainWindow.equalsIgnoreCase(childWindow)) {
+                //switch to child  window
                 driver.switchTo().window(childWindow);
                 System.out.println("child window url " + driver.getCurrentUrl());
                 String actualPageTitle = driver.getCurrentUrl();
